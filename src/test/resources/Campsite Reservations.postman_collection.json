@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "30ca4ada-98c8-4ab2-8f0d-519ea680bff0",
+		"name": "Campsite Reservations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Availability",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/reservations?startDate=2019-03-22&endDate=2019-03-26",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"reservations"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2019-03-22"
+						},
+						{
+							"key": "endDate",
+							"value": "2019-03-26"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Availability",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/reservations?startDate=2019-03-22&endDate=2019-03-26",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reservations"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2019-03-22"
+								},
+								{
+									"key": "endDate",
+									"value": "2019-03-26"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Feb 2019 19:10:10 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"startDate\": \"2019-03-22\",\n    \"endDate\": \"2019-03-26\",\n    \"availableDates\": [\n        \"2019-03-22\",\n        \"2019-03-23\",\n        \"2019-03-24\",\n        \"2019-03-25\",\n        \"2019-03-26\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Make Reservation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"someone@something.com\",\n\t\"fullName\": \"John Smith\",\n\t\"arrivalDate\": \"2019-03-23\",\n\t\"departureDate\": \"2019-03-25\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/reservations",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"reservations"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Make Reservation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"someone@something.com\",\n\t\"fullName\": \"John Smith\",\n\t\"arrivalDate\": \"2019-03-23\",\n\t\"departureDate\": \"2019-03-25\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/reservations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reservations"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Feb 2019 19:10:38 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"uuid\": \"df0381c9-1585-4aa4-a662-7bfc89968928\",\n    \"email\": \"someone@something.com\",\n    \"fullName\": \"John Smith\",\n    \"arrivalDate\": \"2019-03-23\",\n    \"departureDate\": \"2019-03-25\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Read Reservation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/reservations/df0381c9-1585-4aa4-a662-7bfc89968928",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"reservations",
+						"df0381c9-1585-4aa4-a662-7bfc89968928"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Read Reservation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/reservations/df0381c9-1585-4aa4-a662-7bfc89968928",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reservations",
+								"df0381c9-1585-4aa4-a662-7bfc89968928"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Feb 2019 19:11:06 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"uuid\": \"df0381c9-1585-4aa4-a662-7bfc89968928\",\n    \"email\": \"someone@something.com\",\n    \"fullName\": \"John Smith\",\n    \"arrivalDate\": \"2019-03-23\",\n    \"departureDate\": \"2019-03-25\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Modify Reservation",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"new@new.com\",\n\t\"fullName\": \"Paul Johnson\",\n\t\"arrivalDate\": \"2019-03-24\",\n\t\"departureDate\": \"2019-03-26\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/reservations/df0381c9-1585-4aa4-a662-7bfc89968928",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"reservations",
+						"df0381c9-1585-4aa4-a662-7bfc89968928"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Modify Reservation",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"new@new.com\",\n\t\"fullName\": \"Paul Johnson\",\n\t\"arrivalDate\": \"2019-03-24\",\n\t\"departureDate\": \"2019-03-26\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/reservations/df0381c9-1585-4aa4-a662-7bfc89968928",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reservations",
+								"df0381c9-1585-4aa4-a662-7bfc89968928"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Feb 2019 19:11:43 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"uuid\": \"df0381c9-1585-4aa4-a662-7bfc89968928\",\n    \"email\": \"new@new.com\",\n    \"fullName\": \"Paul Johnson\",\n    \"arrivalDate\": \"2019-03-24\",\n    \"departureDate\": \"2019-03-26\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Cancel Reservation",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/reservations/df0381c9-1585-4aa4-a662-7bfc89968928",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"reservations",
+						"df0381c9-1585-4aa4-a662-7bfc89968928"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Cancel Reservation",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/reservations/df0381c9-1585-4aa4-a662-7bfc89968928",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reservations",
+								"df0381c9-1585-4aa4-a662-7bfc89968928"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Feb 2019 19:12:06 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
